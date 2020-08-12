@@ -27,42 +27,25 @@ public class SendEmail {
 	public static String sendEmail(String subject, String imagePath) {
 
 		String port = "587";
-		/*
-		 * String host = "smtp.gmail.com"; String userName = "smudassir70@gmail.com";
-		 * String password = "Muda@1234";
-		 */
-		
-		 // String host = "smtp.office365.com"; 
-		/*
-		 * String userName ="HRteamXebiaIndia@xebia.com"; String password
-		 * ="HpTdGp4JWubWZ0iiyELq40D3WkZmz06fu/wkRNBAgBQ=";
-		 */
-		 
-
-		 String host = "outlook.office365.com";
-
-		// String host ="smtp.office365.com"; 
-		 String userName="mudassir.shaikh@xebia.com"; 
-		 String password = "Muda@123";
-		
-
-		// String subject="Test Mail_OTP";
-
-		// String toAddress = "mudassir.shaikh@xebia.com,mudassir.shaikh@xebia.com";
-		// String[] toAddress = new String[2];
-
+		//String host = "outlook.office365.com";
+		String host="smtp.office365.com";
+		String userName = "HRteamXebiaIndia@xebia.com";
+		String password = "HpTdGp4JWubWZ0iiyELq40D3WkZmz06fu/wkRNBAgBQ=";
 		String status;
 
 		// sets SMTP server properties
 		Properties properties = new Properties();
 
-		properties.put("mail.smtp.host", host);
-		properties.put("mail.smtp.port", port);
-		properties.put("mail.smtp.auth", "true");
-		properties.put("mail.smtp.starttls.enable", "true");
-		properties.put("mail.smtp.ssl.enable", "true");//new
-		properties.put("mail.smtp.user", userName);
+		
+		  properties.put("mail.smtp.host", host); 
+		  properties.put("mail.smtp.port", port);
+		  properties.put("mail.smtp.auth", "true");
+		  properties.put("mail.smtp.starttls.enable", "true");
+		  properties.put("mail.smtp.ssl.enable", "true");// new
+		  properties.put("mail.smtp.user", userName);
+		 
 
+		
 		/*
 		 * properties.put("mail.smtp.auth", "true");
 		 * properties.put("mail.smtp.starttls.enable", "true");
@@ -71,6 +54,7 @@ public class SendEmail {
 		 * properties.put("mail.smtp.ssl.enable", "true");
 		 * properties.put("mail.debug.auth", "true");
 		 */
+		 
 
 		// creates a new session, no Authenticator (will connect() later)
 		Session session = Session.getDefaultInstance(properties);
@@ -135,5 +119,13 @@ public class SendEmail {
 		}
 		return status;
 	}
+	
+	/*
+	 * public static void main(String[] args) {
+	 * 
+	 * String
+	 * imagePath="D:\\Automating_communication_flayers\\Flayers_images\\ISMS Flyer (1).jpg"
+	 * ; sendEmail("Test", imagePath); }
+	 */
 
 }
